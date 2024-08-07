@@ -3,9 +3,9 @@ from django.http import HttpResponse
 
 # Create your views here.
 
+### httpresponse(message)
 def fun1(request):
     return HttpResponse("Welcome")
-
 def fun2(request):
     return HttpResponse("helo")
 
@@ -101,3 +101,9 @@ def div(request,num):
     else:
         return HttpResponse("The last digit of the number is not divisible by three.")    
                 
+
+
+
+### link html page
+def html(reg):
+    return render(reg,'index.html')
