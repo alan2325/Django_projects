@@ -10,5 +10,7 @@ urlpatterns = [
     path('emp/<int:year>/<int:sal>',views.emp),
     path('bill/<int:unit>',views.bill),
     path('day/<int:day>',views.day),
-    path('city/<city>',views.city)
+    path('city/<city>',views.city),
+    path('tax/<int:costprice>',views.tax),
+    path('div/<int:num>',views.div),
 ]

@@ -9,9 +9,13 @@ def fun1(request):
 def fun2(request):
     return HttpResponse("helo")
 
+
+### print 2 numbers from user input
 def fun3(request,a,b):
     return HttpResponse(str(a)+'   '+b)
 
+
+### gratest out of 2 numbers
 def fun4(request,a,b):
     if a>b:
         print("A is grater than B")
@@ -24,6 +28,7 @@ def fun4(request,a,b):
         return HttpResponse(str(b)+" is grater than "+str(a))
    
 
+### salary bonus 5%
 def emp(request,year,sal):
     
     if year>5:
@@ -31,6 +36,8 @@ def emp(request,year,sal):
     else:
         return HttpResponse("You are not eligible !")
     
+
+### Electricity bill
 def bill(request,unit):
     if unit<=100:
         return HttpResponse("Electricity bill for "+str(unit)+" unit is free !")
@@ -39,6 +46,9 @@ def bill(request,unit):
     elif unit>200:
         return HttpResponse("Electricity bill for "+str(unit)+" unit  is : "+str((unit-200)*10+500))
     
+
+
+### print day
 def day(request,day):
     if day==1:
         return HttpResponse("Sunday")
@@ -56,7 +66,10 @@ def day(request,day):
         return HttpResponse("Saturday")
     else:
         return HttpResponse("Invalid input !")
-    
+
+
+
+### display monument of city
 def city(request,city):
     if city=='delhi':
         return HttpResponse("Monument of "+str(city)+" is Red Fort")
@@ -66,3 +79,25 @@ def city(request,city):
         return HttpResponse("Monument of "+str(city)+" is Jai Mahal") 
     else:
         return HttpResponse("Invalid input !")
+    
+
+
+### tax
+def tax(request,costprice):
+    if costprice > 100000:
+        return HttpResponse("Tax is : " +str(0.15 * costprice))
+    elif costprice > 50000:
+            return HttpResponse("Tax is : " +str(0.10 * costprice))
+    else:
+            return HttpResponse("Tax is : " +str(0.05 * costprice))
+
+
+
+### last number divisible by 3
+def div(request,num):
+    last_digit = num % 10
+    if last_digit % 3 == 0:
+        return HttpResponse("The last digit of the number is divisible by three.")
+    else:
+        return HttpResponse("The last digit of the number is not divisible by three.")    
+                
