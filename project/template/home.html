@@ -6,11 +6,14 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Hello</h1>
-    <h3>1 st page</h3>
- 
-    
-    <a href="../html2">Next page</a>
-    
+    <h1>Welcome</h1>
+    <h3>2nd page</h3>
+    {% for i in d2 %}
+        <h3>{{i}}</h3>
+    {% endfor %}
+    {{d1}}<br>
+    {{d2}}<br>
+    {{d3}}<br>
+    <a href="../html">Back</a>
 </body>
 </html>

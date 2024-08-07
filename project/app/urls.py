@@ -13,4 +13,7 @@ urlpatterns = [
     path('city/<city>',views.city),
     path('tax/<int:costprice>',views.tax),
     path('div/<int:num>',views.div),
+    path('html',views.html),
+    path('html2',views.html2),
+    path('std',views.std),
 ]

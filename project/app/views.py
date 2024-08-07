@@ -105,5 +105,20 @@ def div(request,num):
 
 
 ### link html page
-def html(reg):
-    return render(reg,'index.html')
+def html(req):
+    return render(req,'index.html')
+### & passing data into a html page
+def html2(req):
+    a="Hai"
+    b=[1,2,3,4]
+    c={'name':'bla'}
+    return render(req,'home.html',{'d1':a,'d2':b,'d3':c})
+
+
+def std(req):
+    student=[{'name':'aa','age':22,'mark':44},
+         {'name':'bb','age':23,'mark':55},
+         {'name':'cc','age':24,'mark':66},
+         {'name':'dd','age':25,'mark':77},
+         {'name':'ee','age':26,'mark':88},]
+    return render(req,'std.html',{'std':student})
