@@ -16,4 +16,7 @@ urlpatterns = [
     path('html',views.html),
     path('html2',views.html2),
     path('std',views.std),
+    path('above',views.above),
+    path('below',views.below),
+    path('view',views.view),
 ]

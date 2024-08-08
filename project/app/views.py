@@ -115,10 +115,43 @@ def html2(req):
     return render(req,'home.html',{'d1':a,'d2':b,'d3':c})
 
 
+### student mark
+
 def std(req):
     student=[{'name':'aa','age':22,'mark':44},
          {'name':'bb','age':23,'mark':55},
          {'name':'cc','age':24,'mark':66},
          {'name':'dd','age':25,'mark':77},
-         {'name':'ee','age':26,'mark':88},]
+         {'name':'ee','age':26,'mark':38},]
     return render(req,'std.html',{'std':student})
+
+def above(req):
+    student=[{'name':'aa','age':22,'mark':44},
+         {'name':'bb','age':23,'mark':55},
+         {'name':'cc','age':24,'mark':66},
+         {'name':'dd','age':25,'mark':77},
+         {'name':'ee','age':26,'mark':38},]
+    above_std = [] 
+    for i in student:
+        if i["mark"] >50:
+            above_std.append(i)   
+    return render(req,'above.html',{'std':above_std})
+
+
+
+def below(req):
+    student = [{'name': 'aa', 'age': 22, 'mark': 44},
+        {'name': 'bb', 'age': 23, 'mark': 55},
+        {'name': 'cc', 'age': 24, 'mark': 66},
+        {'name': 'dd', 'age': 25, 'mark': 77},
+        {'name': 'ee', 'age': 26, 'mark': 38},]
+    below_std = []
+    for i in student:
+        if i["mark"] < 50:
+            below_std.append(i)
+    return render(req, 'below.html', {'std': below_std})
+
+
+
+def view(req):
+    return render(req,'static.html')
