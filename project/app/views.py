@@ -137,8 +137,6 @@ def above(req):
             above_std.append(i)   
     return render(req,'above.html',{'std':above_std})
 
-
-
 def below(req):
     student = [{'name': 'aa', 'age': 22, 'mark': 44},
         {'name': 'bb', 'age': 23, 'mark': 55},
@@ -152,6 +150,6 @@ def below(req):
     return render(req, 'below.html', {'std': below_std})
 
 
-
+### new template
 def view(req):
     return render(req,'static.html')
