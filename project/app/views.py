@@ -185,3 +185,9 @@ def edit(req,std):
 
     else:
         return render(req,'form_edit.html',{'data':std1})
+    
+def delete(req,nm):
+    for i in l:
+        if i['nm']==nm:    
+            l.remove(i)
+            return redirect(form)
