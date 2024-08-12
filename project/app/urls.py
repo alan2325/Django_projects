@@ -19,4 +19,6 @@ urlpatterns = [
     path('above',views.above),
     path('below',views.below),
     path('view',views.view),
+    path('form',views.form),
+    path('edit/<std>',views.edit),
 ]

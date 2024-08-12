@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse
 
 # Create your views here.
@@ -153,3 +153,35 @@ def below(req):
 ### new template
 def view(req):
     return render(req,'static.html')
+
+
+### input from user
+l=[]
+def form(req):
+    if req.method=='POST':
+        name=req.POST['name']
+        age=req.POST['age']
+        mark=req.POST['mark']
+        l.append({'nm':name,'ag':age,'mrk':mark})
+        return render(req,'form.html', {'data':l})
+    else:
+        return render(req,'form.html',{'data':l})
+
+
+def edit(req,std):
+    std1={}
+    pos=0
+    for i in l:
+        if i['nm']==std:
+            std1=i
+            pos=l.index(i)
+
+    if req.method=='POST':
+        name=req.POST['name']
+        age=req.POST['age']
+        mark=req.POST['mark']
+        l[pos]={'nm':name,'ag':age,'mrk':mark}
+        return redirect(form)
+
+    else:
+        return render(req,'form_edit.html',{'data':std1})
