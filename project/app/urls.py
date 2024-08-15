@@ -21,5 +21,9 @@ urlpatterns = [
     path('view',views.view),
     path('form',views.form),
     path('edit/<std>',views.edit),
-    path('delete/<nm>',views.delete)
+    path('delete/<nm>',views.delete),
+    path('display',views.display),
+    path('add',views.add),
+    path('edits/<int:id>',views.edits),
+    path('deletes/<int:id>',views.deletes),
 ]
