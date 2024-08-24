@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from .models import *
+from .forms import * # type: ignore
 # Create your views here.
 
 ### httpresponse(message)
@@ -221,3 +222,32 @@ def deletes(req,id):
     data=Student.objects.get(pk=id)
     data.delete()
     return redirect(display)
+
+def normal_form(req):
+  
+    if req.method=='POST':
+        std=user_std_form(req.POST)
+        if std.is_valid():
+            name=std.cleaned_data['name'] 
+            age=std.cleaned_data['age']
+            mark=std.cleaned_data['mark']
+            print(name,age,mark)
+            data=Student.objects.create(name=name,age=age,mark=mark)
+            data.save()
+            return redirect(normal_form)
+    else:
+        std=user_std_form()
+        return render(req,'user_form.html',{'std':std})
+
+
+def model_form_dis(req):
+    if req.method=='POST':
+        std=model_form(req.POST)
+        if std.is_valid():
+            std.save()
+        return redirect(model_form_dis)
+        
+    else:
+        std=model_form()
+        return render(req,'model_form.html',{'std':std})
+       
