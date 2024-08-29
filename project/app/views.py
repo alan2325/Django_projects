@@ -251,3 +251,12 @@ def model_form_dis(req):
         std=model_form()
         return render(req,'model_form.html',{'std':std})
        
+
+
+######## template inheritance
+
+def base(req):
+    return render(req,'inher-base.html')       
+
+def child(req):
+    return render(req,'inher-child.html')   

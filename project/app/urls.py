@@ -28,4 +28,6 @@ urlpatterns = [
     path('deletes/<int:id>',views.deletes),
     path('normal_form',views.normal_form),
     path('model_form',views.model_form_dis),
+    path('base',views.base),
+    path('child',views.child),
 ]
